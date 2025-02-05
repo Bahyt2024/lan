@@ -6,6 +6,7 @@ import Home from "@/pages/Home";
 import Nav from "@/components/Nav";
 import './index.css';
 
+
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function Routerr() {
