@@ -9,6 +9,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import 'swiper/css/pagination';
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from 'react-router-dom';
+import video from '@/../NonnLanding.mp4'
 
 const texts = {
   1: "Maximize your sales and profits with the world's №1 repricer",
@@ -121,7 +122,7 @@ export default function HeroSection() {
                     loop
                     playsInline
                 >
-                  <source src="/NonnLanding.mp4" type="video/mp4" />
+                  <source src={video} type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
               </div>

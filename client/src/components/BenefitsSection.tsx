@@ -4,7 +4,7 @@ import { Card, CardContent } from "@/components/ui/card"; // Импорт ком
 import { Dialog, DialogTrigger, DialogContent } from "@/components/ui/dialog"; // Импорт компонентов Dialog
 import { Button } from "@/components/ui/button"; // Импорт компонента Button
 import ContactForm from "@/components/ContactForm"; // Импорт компонента ContactForm
-
+import video2 from '@/../VIDEO_Phone.mp4'
 // Данные о преимуществах
 const benefits = [
   {
@@ -58,7 +58,7 @@ export default function BenefitsSectionNonLanding() {
                         loop
                         playsInline
                     >
-                      <source src="/VIDEO_Phone.mp4" type="video/mp4" />
+                      <source src={video2} type="video/mp4" />
                     </video>
                   </div>
                 </div>
