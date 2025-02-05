@@ -43,11 +43,6 @@ const __dirname = path.dirname(__filename);
   });
 
   // Новый маршрут для /promotion
-  app.use("/promotion", express.static(path.join(__dirname, "..", "client")));
-
-  app.get("/promotion", (_req, res) => {
-    res.sendFile(path.join(__dirname, "..","client", "index.html"));
-  });
 
   // Регистрация маршрутов
   const server = registerRoutes(app);
