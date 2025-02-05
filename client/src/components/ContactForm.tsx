@@ -112,23 +112,22 @@ export default function ContactForm() {
                         render={({ field }) => (
                             <FormItem className="w-full">
                                 <FormControl className="w-full">
-                                    <InputMask
-                                        mask="+\999 (999) 999-9999"
-                                        maskChar={null}
+                                    <input
                                         {...field}
-                                    >
-                                        {(inputProps) => (
-                                            <input
-                                                {...inputProps}
-                                                placeholder="Phone"
-                                                type="tel"
-                                                className="w-full text-base h-10 rounded-lg border-gray-300 border focus:outline-none focus:ring-2 focus:ring-blue-500 pl-4" // pl-4 добавляет отступ слева
-                                            />
-                                        )}
-                                    </InputMask>
+                                        placeholder="Phone"
+                                        type="tel"
+                                        maxLength={20} // Ограничение на 20 символов
+                                        inputMode="numeric" // Подсказка для мобильных клавиатур
+                                        pattern="[0-9]*" // Только цифры
+                                        onInput={(e) => {
+                                            // Оставляем только цифры
+                                            e.target.value = e.target.value.replace(/\D/g, '');
+                                        }}
+                                        className="w-full text-base h-10 rounded-lg border-gray-300 border focus:outline-none focus:ring-2 focus:ring-blue-500 pl-4"
+                                    />
                                 </FormControl>
-                                <FormMessage className="text-xs sm:text-sm" />
                             </FormItem>
+
                         )}
                     />
 
