@@ -29,7 +29,7 @@ export default function HeroSection() {
   // Проверяем и устанавливаем параметр utm_content
   useEffect(() => {
     const urlParams = new URLSearchParams(location.search);
-    const utmValueString = urlParams.get("promotion/utp_content");
+    const utmValueString = urlParams.get("utp_content");
 
     // Проверяем, если значение присутствует и преобразуем в число
     let utmValue = utmValueString ? parseInt(utmValueString, 10) : 1;

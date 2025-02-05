@@ -43,6 +43,10 @@ const __dirname = path.dirname(__filename);
   });
 
   // Новый маршрут для /promotion
+  app.get("/promotion", (req: Request, res: Response) => {
+    // Убедитесь, что путь к вашему файлу правильный
+    res.sendFile(path.resolve(__dirname, '..', 'client', 'index.html')); // Путь до index.html или другого файла
+  });
 
   // Регистрация маршрутов
   const server = registerRoutes(app);
@@ -66,7 +70,7 @@ const __dirname = path.dirname(__filename);
   // Определяем порт (можно также использовать process.env.PORT)
   const PORT = process.env.PORT || 4001;
   server.listen(PORT, () => {
-    log(`Server running at http://localhost:${PORT}/promotion`);
+    log(`Server running at http://localhost:${PORT}`);
   });
 })().catch((err) => {
   console.error("Ошибка запуска сервера:", err);
