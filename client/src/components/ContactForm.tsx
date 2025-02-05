@@ -59,7 +59,7 @@ export default function ContactForm() {
             // const utpText = !isNaN(utmContentNumber) ? texts[utmContentNumber] : "Default UTP";
 
             // Отправляем данные на сервер
-            const response = await fetch('http://localhost:3000/send-promotion', {
+            const response = await fetch('https://uae.salescout.me/send-promotion', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
