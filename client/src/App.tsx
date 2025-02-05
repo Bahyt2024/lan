@@ -10,25 +10,25 @@ import './index.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function Routerr() {
-  return (
-      <Router>
-          <Routes>
-              {/* Используем 'element' вместо 'component' */}
-              <Route path="/" element={<Home />} />
-              <Route path="*" element={<NotFound />} />
-          </Routes>
-      </Router>
-  );
+    return (
+        <Router>
+            <Routes>
+                {/* Используем 'element' вместо 'component' */}
+                <Route path="/promotion" element={<Home />} />
+                <Route path="*" element={<NotFound />} />
+            </Routes>
+        </Router>
+    );
 }
 
 function App() {
-  return (
-    <QueryClientProvider client={queryClient}>
-      <Nav />
-      <Routerr />
-      <Toaster />
-    </QueryClientProvider>
-  );
+    return (
+        <QueryClientProvider client={queryClient}>
+            <Nav />
+            <Routerr />
+            <Toaster />
+        </QueryClientProvider>
+    );
 }
 
 export default App;
