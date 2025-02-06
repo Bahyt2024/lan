@@ -84,12 +84,13 @@ export default function HeroSection() {
   ];
 
   return (
-      <section className="relative min-h-[90vh] pt-8 sm:pt-12 pb-8 sm:pb-16 container mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative  pt-8 sm:pt-12 pb-8 sm:pb-16 container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="space-y-8">
           <div className="grid lg:grid-cols-2 gap-x-12 gap-y-8 items-center">
             {/* Текстовая часть с заголовком и кнопкой */}
             <div className="sm:mb-8">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 leading-[3]" dangerouslySetInnerHTML={{ __html: headline }}></h1>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 leading-[1]"
+                  dangerouslySetInnerHTML={{__html: headline}}></h1>
               <p className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8">
                 No credit card required | Cancel anytime | 3-day trial
               </p>
@@ -99,7 +100,7 @@ export default function HeroSection() {
                     <Button size="lg" className="w-full sm:w-auto">Try for free</Button>
                   </DialogTrigger>
                   <DialogContent>
-                    <ContactForm />
+                    <ContactForm/>
                   </DialogContent>
                 </Dialog>
                 <div className="text-sm text-gray-600 mt-2">
@@ -122,7 +123,7 @@ export default function HeroSection() {
                     loop
                     playsInline
                 >
-                  <source src={video} type="video/mp4" />
+                  <source src={video} type="video/mp4"/>
                   Your browser does not support the video tag.
                 </video>
               </div>
@@ -132,29 +133,30 @@ export default function HeroSection() {
           {/* Карусель с отзывами */}
           <div className="mt-16 text-center relative space-y-8">
             <Swiper
-                modules={[Navigation, Pagination, Autoplay]}
+                modules={[Navigation, Autoplay]} // Убираем Pagination
                 spaceBetween={30}
                 slidesPerView={1}
                 navigation
                 loop={true}
-                autoplay={{ delay: 4000 }}
-                pagination={{ clickable: true }}
+                autoplay={{delay: 4000}}
                 className="w-full max-w-6xl mx-auto"
             >
               {testimonials.map((testimonial) => (
                   <SwiperSlide key={testimonial.id}>
-                    <div className="bg-gray-100 p-8 rounded-lg shadow-lg space-y-4">
+                    <div className="bg-gray-100 p-8 rounded-lg shadow-lg space-y-4 w-[80%] mx-auto">
                       <p className="text-lg font-semibold">
-                        <span style={{ color: '#FFD700' }}>★★★★★</span>
+                        <span style={{color: '#FFD700'}}>★★★★★</span>
                       </p>
                       <p className="text-gray-800 mt-4">{testimonial.text}</p>
                       <p className="mt-6 font-bold">{testimonial.author}</p>
-                      <p className="text-sm text-gray-600">{testimonial.role}</p>
+                      <p className="text-sm text-gray-600 mb-10">{testimonial.role}</p>
                     </div>
                   </SwiperSlide>
               ))}
             </Swiper>
           </div>
+
+
         </div>
       </section>
   );

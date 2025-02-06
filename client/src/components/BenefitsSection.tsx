@@ -38,19 +38,23 @@ export default function BenefitsSectionNonLanding() {
   }, []);
 
   return (
-      <section id="benefits" className="py-24 bg-gray-50 w-full">
+      <section id="benefits" className="py-24 pb-16 bg-gray-50 w-full">
+
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4 mt-[-20px] text-center lg:text-right lg:pr-40">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-8 mt-[-60px] text-center lg:flex lg:justify-center lg:ml-auto lg:w-1/2">
             {heading} {/* Отображаем динамически изменяющийся заголовок */}
           </h2>
+
           <div className="grid lg:grid-cols-2 gap-12 items-center">
 
             {/* Левая сторона: Видео в черной рамке */}
             <div className="relative flex justify-center lg:pl-8">
               <div className="relative w-full max-w-[220px] sm:max-w-[260px] h-[450px] sm:h-[500px] md:h-[550px]">
                 <div className="absolute inset-0 bg-black rounded-[2rem] sm:rounded-[3rem] shadow-xl">
-                  <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-16 sm:w-24 h-5 sm:h-7 bg-black rounded-б-2xl sm:rounded-б-3xl" />
-                  <div className="absolute top-1 sm:top-2 right-1 sm:right-2 bottom-1 sm:bottom-2 left-1 sm:left-2 bg-white rounded-[1.5rem] sm:rounded-[2.5rem] overflow-hidden">
+                  <div
+                      className="absolute top-0 left-1/2 transform -translate-x-1/2 w-16 sm:w-24 h-5 sm:h-7 bg-black rounded-б-2xl sm:rounded-б-3xl"/>
+                  <div
+                      className="absolute top-1 sm:top-2 right-1 sm:right-2 bottom-1 sm:bottom-2 left-1 sm:left-2 bg-white rounded-[1.5rem] sm:rounded-[2.5rem] overflow-hidden">
                     <video
                         className="w-full h-full object-cover"
                         autoPlay
@@ -58,7 +62,7 @@ export default function BenefitsSectionNonLanding() {
                         loop
                         playsInline
                     >
-                      <source src={video2} type="video/mp4" />
+                      <source src={video2} type="video/mp4"/>
                     </video>
                   </div>
                 </div>
@@ -68,55 +72,64 @@ export default function BenefitsSectionNonLanding() {
             {/* Правая сторона: Текстовый контент */}
             <div>
               <p className="text-lg text-gray-600 mb-8">
-                We analyze the market and your reviews every minute to keep your product at the top. With real-time monitoring, we ensure maximum visibility and sales efficiency, helping you stay ahead of the competition.
+                We analyze the market and your reviews every minute to keep your product at the top. With real-time
+                monitoring, we ensure maximum visibility and sales efficiency, helping you stay ahead of the
+                competition.
               </p>
 
               {/* Список преимуществ */}
               <div className="space-y-6">
                 <div>
                   <div className="flex items-center mb-4">
-                    <Box className="h-6 w-6 mr-2 text-primary" />
+                    <Box className="h-6 w-6 mr-2 text-primary"/>
                     <h3 className="text-xl sm:text-2xl font-semibold">
                       Win and keep the Buy Box
                     </h3>
                   </div>
                   <p className="text-gray-600">
-                    Our Buy Box strategy not only helps you to get the Buy Box but also to keep it, ensuring your products remain among the top offers.
+                    Our Buy Box strategy not only helps you to get the Buy Box but also to keep it, ensuring your
+                    products remain among the top offers.
                   </p>
                 </div>
 
                 <div>
                   <div className="flex items-center mb-4">
-                    <Target className="h-6 w-6 mr-2 text-primary" />
+                    <Target className="h-6 w-6 mr-2 text-primary"/>
                     <h3 className="text-xl sm:text-2xl font-semibold">
                       Find your optimal price regardless of competition
                     </h3>
                   </div>
                   <p className="text-gray-600">
-                    Our Optimal Price algorithm uses AI to find the best prices for your products, regardless of your competitors.
+                    Our Optimal Price algorithm uses AI to find the best prices for your products, regardless of your
+                    competitors.
                   </p>
                 </div>
 
                 <div>
                   <div className="flex items-center mb-4">
-                    <TrendingUp className="h-6 w-6 mr-2 text-primary" />
+                    <TrendingUp className="h-6 w-6 mr-2 text-primary"/>
                     <h3 className="text-xl sm:text-2xl font-semibold">
                       Maintain sales velocity
                     </h3>
                   </div>
                   <p className="text-gray-600 mb-4">
-                    The Private Label algorithm helps to find the best price to maximize your profits while maintaining a high level of sales.
+                    The Private Label algorithm helps to find the best price to maximize your profits while maintaining
+                    a high level of sales.
                   </p>
 
                   {/* Кнопка "Уведомить меня" с диалогом */}
                   <Dialog>
                     <DialogTrigger asChild>
-                      <Button size="lg" className="w-full sm:w-auto bg-primary text-white py-3 px-6 rounded-md shadow-lg hover:bg-primary/90">
+                      <Button
+                          size="lg"
+                          className="w-full sm:w-auto bg-primary text-white  px-6 rounded-md shadow-lg hover:bg-primary/90 mt-10 sm:mt-0"
+                      >
                         Notify Me
                       </Button>
+
                     </DialogTrigger>
                     <DialogContent>
-                      <ContactForm />
+                      <ContactForm/>
                     </DialogContent>
                   </Dialog>
                 </div>

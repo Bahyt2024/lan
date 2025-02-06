@@ -64,7 +64,7 @@ const __dirname = path.dirname(__filename);
   }
 
   // Определяем порт (можно также использовать process.env.PORT)
-  const PORT = process.env.PORT || 4001;
+  const PORT = process.env.PORT || 3000;
   server.listen(PORT, () => {
     log(`Server running at http://localhost:${PORT}/promotion`);
   });

@@ -45,22 +45,36 @@ const faqs = [
 ];
 export default function FaqSection() {
   return (
-    <section id="faq" className="py-24 w-full overflow-x-hidden">
-      <div className="container mx-auto px-4 max-w-3xl">
-        <h2 className="text-4xl font-bold text-center mb-16">
-          Frequently Asked Questions
-        </h2>
-        <Accordion type="single" collapsible className="w-full">
-          {faqs.map((faq, index) => (
-            <AccordionItem key={index} value={`item-${index}`}>
-              <AccordionTrigger>{faq.question}</AccordionTrigger>
-              <AccordionContent>
-                <div className="animate-fadeIn">{faq.answer}</div>
-              </AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
-      </div>
-    </section>
+      <section id="faq" className="py-24 w-full overflow-x-hidden">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <h2 className="text-4xl font-bold text-left sm:text-center mb-16">
+            Frequently Asked Questions
+          </h2>
+          <Accordion type="single" collapsible className="w-full">
+            {faqs.map((faq, index) => (
+                <AccordionItem key={index} value={`item-${index}`}>
+                  <AccordionTrigger className="text-left">
+
+                    {faq.question}
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    <div className="animate-fadeIn text-left">{faq.answer}</div>
+                  </AccordionContent>
+                </AccordionItem>
+            ))}
+          </Accordion>
+          <div className="mt-12 flex justify-center">
+            <a
+                href="https://api.whatsapp.com/send/?phone=971585661204&text&type=phone_number&app_absent=0"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-green-500 text-white py-4 px-8 rounded-md shadow-lg transition transform hover:-translate-y-2 text-lg"
+            >
+              WhatsApp
+            </a>
+          </div>
+
+        </div>
+      </section>
   );
 }
